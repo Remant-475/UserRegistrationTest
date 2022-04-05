@@ -16,6 +16,10 @@ namespace UserRegistrationTesting
             Name_Empty,
             Name_Less_Than_Three,
             Name_Start_With_Upper_Case,
+            Email_Empty,
+            Email_With_Min_Char,
+            Email_Contains_SpecialChar,
+            Email_Contain_Symbol,
         }
         public UserValidationCustomException(ExceptionType type, string message) : base(message)
         {

@@ -12,6 +12,8 @@ namespace UserRegistrationTesting
             do
             {
                 Console.WriteLine("Choose 1: First name ");
+                Console.WriteLine("Choose 2: Last name ");
+                Console.WriteLine("Choose 3: Email ");
 
                 try
                 {
@@ -22,6 +24,16 @@ namespace UserRegistrationTesting
                             Console.WriteLine("Enter your First Name: ");
                             string input = Console.ReadLine();
                             userRegistration.ValidFirstName(input);
+                            break;
+                        case 2:
+                            Console.WriteLine("Enter your Last Name: ");
+                            input = Console.ReadLine();
+                            userRegistration.ValidLastName(input);
+                            break;
+                        case 3:
+                            Console.WriteLine("Enter your Email: ");
+                            input = Console.ReadLine();
+                            userRegistration.ValidEmail(input);
                             break;
                         default:
                             Console.WriteLine("Choose From the Options given above");
