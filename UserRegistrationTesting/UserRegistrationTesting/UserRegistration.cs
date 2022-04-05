@@ -11,6 +11,7 @@ namespace UserRegistrationMSTesting
     {
 
         public Regex FirstNameRegex = new Regex("^[A-Z]{1}[A-Za-z]{2,}$");
+        public Regex LastNameRegex = new Regex("^[A-Z]{1}[A-Za-z]{2,}$");
 
         public void ValidFirstName(string firstName)
         {
@@ -19,6 +20,15 @@ namespace UserRegistrationMSTesting
                 Console.WriteLine($"{firstName} is valid");
             else
                 Console.WriteLine($"{firstName} is Invalid");
+
+        }
+        public void ValidLastName(string lastName)
+        {
+            Console.WriteLine("Last name - " + lastName);
+            if (LastNameRegex.IsMatch(lastName))
+                Console.WriteLine($"{lastName} is valid");
+            else
+                Console.WriteLine($"{lastName} is Invalid");
 
         }
 
