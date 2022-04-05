@@ -13,6 +13,7 @@ namespace UserRegistrationTesting
         public Regex LastNameRegex = new Regex("^[A-Z]{1}[A-Za-z]{2,}$");
         public Regex EmailRegex = new Regex("^[A-Za-z]+([.+-][A-Za-z 0-9]+)*@[A-Za-z 0-9]+.[A-Za-z]([.[A-Za-z]{2,})?$");
         public Regex PhoneRegex = new Regex(@"^[]0-9]{2}\s[0-9]{10}$");
+        public Regex PasswordRule_1 = new Regex(@"^[A-Z a-z]{8,}$");
         public string ValidFirstName(string firstName)
         {
             bool result = false;
@@ -121,6 +122,29 @@ namespace UserRegistrationTesting
                 throw exception;
             }
             return "Phone number is Invalid";
+        }
+        public string ValidPasswordMinEightChar(string password)
+        {
+            bool result = false;
+            if (PasswordRule_1.IsMatch(password)) { result = true; }
+            try
+            {
+                if (result == false)
+                {
+                    if (password.Equals(string.Empty))
+                        throw new UserValidationCustomException(UserValidationCustomException.ExceptionType.Password_Empty,
+                            "Password should not be empty");
+                    else if (password.Length < 8)
+                        throw new UserValidationCustomException(UserValidationCustomException.ExceptionType.Password_Min_Eight_Char,
+                            "Password should contain atleast eight characters");
+                }
+                else return "Password is Valid";
+            }
+            catch (UserValidationCustomException exception)
+            {
+                throw exception;
+            }
+            return "Password is Invalid";
         }
     }
 }
