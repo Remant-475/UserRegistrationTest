@@ -16,6 +16,7 @@ namespace UserRegistrationTesting
                 Console.WriteLine("Choose 3: Email ");
                 Console.WriteLine("Choose 4: Phone Number ");
                 Console.WriteLine("Choose 5: Pasword min 8 character ");
+                Console.WriteLine("Choose 6: Pasword Atleast one uppercase ");
 
                 try
                 {
@@ -46,6 +47,11 @@ namespace UserRegistrationTesting
                             Console.WriteLine("Enter Password: ");
                             input = Console.ReadLine();
                             userRegistration.ValidPasswordRule_1(input);
+                            break;
+                        case 6:
+                            Console.WriteLine("Enter Password: ");
+                            input = Console.ReadLine();
+                            userRegistration.ValidPasswordRule_2(input);
                             break;
                         default:
                             Console.WriteLine("Choose From the Options given above");

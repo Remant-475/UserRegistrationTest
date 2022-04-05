@@ -74,5 +74,19 @@ namespace UserRegistrationTesting
                 Assert.AreEqual(expected, result);
             }
         }
+        public void ValidPassword_2()
+        {
+            string result = null;
+            string expected = "Password shold contain atleast one upper case";
+            try
+            {
+                string password = "Jellyfish";
+                result = validation.ValidPasswordAtleastOneUpperCase(password);
+            }
+            catch (Exception)
+            {
+                Assert.AreEqual(expected, result);
+            }
+        }
     }
 }
