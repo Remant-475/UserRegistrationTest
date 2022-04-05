@@ -13,6 +13,7 @@ namespace UserRegistrationMSTesting
         public Regex FirstNameRegex = new Regex("^[A-Z]{1}[A-Za-z]{2,}$");
         public Regex LastNameRegex = new Regex("^[A-Z]{1}[A-Za-z]{2,}$");
         public Regex EmailRegex = new Regex("^[A-Za-z]+([.+-][A-Za-z 0-9]+)*@[A-Za-z 0-9]+.[A-Za-z]([.[A-Za-z]{2,})?$");
+        public Regex PhoneRegex = new Regex(@"^[]0-9]{2}\s[0-9]{10}$");
         public void ValidFirstName(string firstName)
         {
             Console.WriteLine("First name - " + firstName);
@@ -38,6 +39,14 @@ namespace UserRegistrationMSTesting
                 Console.WriteLine($"{email} is valid");
             else
                 Console.WriteLine($"{email} is Invalid");
+        }
+        public void ValidPhoneNumber(string phonenumber)
+        {
+            Console.WriteLine("PhoneNumber :" + phonenumber);
+            if (PhoneRegex.IsMatch(phonenumber))
+                Console.WriteLine("PhoneNumber is valid");
+            else
+                Console.WriteLine("PhoneNumber is invalid");
         }
 
 

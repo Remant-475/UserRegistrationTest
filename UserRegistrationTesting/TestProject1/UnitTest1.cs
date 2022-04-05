@@ -35,10 +35,25 @@ namespace UserRegistrationTesting
         {
             string expected = "Email is Valid";
             string result = null;
-            string email = "bittanraghu@gmail.com";
+            string email = "remo-145@gmail.com";
             try
             {
                 result = validation.ValidEmail(email);
+            }
+            catch (Exception)
+            {
+                Assert.AreEqual(expected, result);
+            }
+        }
+        [Test]
+        public void ValidPhone()
+        {
+            string expected = "Phone number is Valid";
+            string result = null;
+            try
+            {
+                string phone = "91 9798777067";
+                result = validation.ValidPhoneNumber(phone);
             }
             catch (Exception)
             {

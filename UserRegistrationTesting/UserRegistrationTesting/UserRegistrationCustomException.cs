@@ -12,7 +12,6 @@ namespace UserRegistrationTesting
         ExceptionType type;
         public enum ExceptionType
         {
-
             Name_Empty,
             Name_Less_Than_Three,
             Name_Start_With_Upper_Case,
@@ -20,6 +19,8 @@ namespace UserRegistrationTesting
             Email_With_Min_Char,
             Email_Contains_SpecialChar,
             Email_Contain_Symbol,
+            Mobile_Number_Empty,
+            Mobile_Atleast_TenDigit,
         }
         public UserValidationCustomException(ExceptionType type, string message) : base(message)
         {
