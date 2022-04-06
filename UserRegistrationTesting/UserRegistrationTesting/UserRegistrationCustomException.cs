@@ -24,7 +24,7 @@ namespace UserRegistrationTesting
             Password_Empty,
             Password_Min_Eight_Char,
             Password_AtLeast_OneUpperCase,
-            
+            Password_AtLeast_OneNumeric,
         }
         public UserValidationCustomException(ExceptionType type, string message) : base(message)
         {

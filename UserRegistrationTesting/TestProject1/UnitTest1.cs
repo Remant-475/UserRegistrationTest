@@ -80,8 +80,23 @@ namespace UserRegistrationTesting
             string expected = "Password shold contain atleast one upper case";
             try
             {
-                string password = "Jellyfish";
+                string password = "Jellyfish2";
                 result = validation.ValidPasswordAtleastOneUpperCase(password);
+            }
+            catch (Exception)
+            {
+                Assert.AreEqual(expected, result);
+            }
+        }
+        [Test]
+        public void ValidPassWord_3()
+        {
+            string result = null;
+            string expected = "Password should contain atleast eight characters,one Upper Case and one number";
+            try
+            {
+                string password = "passwords";
+                result = validation.ValidPasswordAtLeastOneNumeric(password);
             }
             catch (Exception)
             {
